@@ -1,0 +1,54 @@
+% paper on compound matrices ???
+% Version 0.1
+% 2016/11/01
+
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+
+% real numbers
+\newcommand{\R}{\mathbb{R}}
+
+% define lemma
+\newtheorem{lemma}{Lemma}
+
+\begin{document}
+
+\section{Examples}
+
+For this we use the vscode extension \texttt{LaTeX Workshop} 
+and the the Copilot extension \texttt{GitHub Copilot} with 
+the chat extension \texttt{GitHub Copilot Chat}.
+It uses \texttt{TeXlive} and the \texttt{latexmk} command.
+
+% a first lemma
+
+\begin{lemma}
+    All principle submatrices of a 
+    symmetric positive-semidefinite matrix are
+    symmetric positive-semidefinite.
+\end{lemma}
+
+\begin{proof}
+    Let $A\in \R^{n,n}$ be a symmetric positive-semidefinite matrix and 
+    let $B\in\R^{k,k}$ be a principle submatrix of $A$. 
+    Furthermore, as $B$ is a principle submatrix of $A$, there exists
+    a matrix $E\in\R^{n,k}$ such that $B = E^T A E$, 
+    has only elements in $\{0,1\}$ and $E^T E=I$.
+    It follows that $B$ is symmetric positive-semidefinite.
+\end{proof}
+
+GitHub Copilot: Sure, here's a clearer version of the same text:
+
+\begin{proof}
+Let $A\in \R^{n,n}$ be a symmetric positive-semidefinite matrix, 
+and let $B\in\R^{k,k}$ be a principal submatrix of $A$. This 
+means that $B$ is obtained by selecting $k$ rows and $k$ columns 
+of $A$, and arranging them into a square matrix. Since $B$ is 
+a principal submatrix of $A$, there exists a matrix 
+$E\in\R^{n,k}$ such that $B = E^T A E$, where $E$ has only 
+elements in $\{0,1\}$ and $E^T E=I$. This means that $B$ is 
+also symmetric positive-semidefinite.
+\end{proof}
+
+
+\end{document}
