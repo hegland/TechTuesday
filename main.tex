@@ -4,6 +4,8 @@
 
 \documentclass[12pt]{article}
 \usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage{tikz}
+\usepackage{pgfplots}
 
 % real numbers
 \newcommand{\R}{\mathbb{R}}
@@ -49,6 +51,29 @@ $E\in\R^{n,k}$ such that $B = E^T A E$, where $E$ has only
 elements in $\{0,1\}$ and $E^T E=I$. This means that $B$ is 
 also symmetric positive-semidefinite.
 \end{proof}
+
+% in chat: generate a csv file with 10 x and y coordinates where x 
+% are random between 0 and 2 pi and y = sin(x)
+% sort the results by x and save as data.csv
+
+% read the data from data.csv and plot the data using pgfplots
+% include the plot in the document as a figure
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel=$x$,
+            ylabel={$f(x) = \sin(x)$},
+            ymin=-1, ymax=1,
+            xmin=0, xmax=6.28
+        ]
+        \addplot table[x=x, y=y, col sep=comma] {data.csv};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Plot of the function $f(x) = \sin(x)$}
+    \label{fig:sin} 
+\end{figure}
 
 
 \end{document}
